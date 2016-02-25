@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ClickAhead">
+
+<head>
+  <meta charset="utf-8">
+
+  <script type="text/javascript" src="js/angular.min.js"></script>
+  <script type="text/javascript" src="js/routing.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/controller.js"> </script>
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+<title></title>
+</head>
+
+<body>
+
+  <div class="container">
+    <div>
+      Welcome to Modern Hardware's Click Ahead ordering service!
+    </div>
+    <br>
+
+    <div>
+      Please enter your contact information below and we'll begin your order.
+    </div>
+    <br><br>
+
+
+    <div ng-controller="formController as form">
+
+      <form >
+      Name:&nbsp; <input type="text" placeholder="John Doe" ng-model="form.fullName">
+      <br><br>
+      Phone: <input type="tel" placeholder="XXX-XXX-XXXX" ng-model="form.phone">
+      <br><br>
+      Email:&nbsp; <input type="email" placeholder="jake@modern.com" ng-model="form.email">
+      <br><br>
+
+      <input type="button" value="Submit" ng-click="form.setContact(form)"/>
+      <br>
+      {{form.customer.fullName}}
+      {{form.customer.phone}}
+      {{form.customer.email}}
+      <br>
+      {{form.fullName}}
+      {{form.phone}}
+      {{form.email}}
+      </form>
+
+    </div>
+
+
+  </div>
+
+</body>
+
+</html>
